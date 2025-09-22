@@ -8,6 +8,8 @@ import bugRoutes from "./routes/bugs.js";
 dotenv.config();
 const app = express();
 
+// ✅ Trust proxy
+app.set('trust proxy', 1);
 
 // ✅ Rate limiting
 const limiter = rateLimit({
