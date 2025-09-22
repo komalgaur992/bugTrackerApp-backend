@@ -11,17 +11,11 @@ const app = express();
 // ✅ Trust proxy
 app.set('trust proxy', 1);
 
-// ✅ Rate limiting
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100,
-  message: "Too many requests from this IP, please try again later.",
-});
-app.use(limiter);
-
 // ✅ CORS configuration
 const allowedOrigins = [
   process.env.FRONTEND_URL,
+  "https://bug-tracker-app-frontend.vercel.app",
+  "https://bug-tracker-app-frontend-c6z7wrzbo-komalgaur992s-projects.vercel.app",
   "https://bug-tracker-app-frontend-fg4mzheln-komalgaur992s-projects.vercel.app", // Vercel frontend
   "http://localhost:5173" // local dev
 ].filter(Boolean);
@@ -29,6 +23,7 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
+      console.log("📦 Request origin:", origin);
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -39,6 +34,14 @@ app.use(
     credentials: true,
   })
 );
+
+// ✅ Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100,
+  message: "Too many requests from this IP, please try again later.",
+});
+app.use(limiter);
 
 // ✅ Body parser
 app.use(express.json({ limit: "10mb" }));
