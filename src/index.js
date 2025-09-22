@@ -15,8 +15,8 @@ app.set('trust proxy', 1);
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   "https://bug-tracker-app-frontend.vercel.app",
-  "https://bug-tracker-app-frontend-c6z7wrzbo-komalgaur992s-projects.vercel.app",
-  "https://bug-tracker-app-frontend-fg4mzheln-komalgaur992s-projects.vercel.app", // Vercel frontend
+  "bug-tracker-app-frontend-git-main-komalgaur992s-projects.vercel.app",
+  "bug-tracker-app-frontend-cp1de389g-komalgaur992s-projects.vercel.app", // Vercel frontend
   "http://localhost:5173" // local dev
 ].filter(Boolean);
 
