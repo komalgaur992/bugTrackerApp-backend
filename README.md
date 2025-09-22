@@ -57,7 +57,7 @@ yarn dev
 
 ## ☁️ Deployment
 
-- **Hosting**: Render/Railway.
+- **Hosting**: vercel.
 - **Environment Variables**: Ensure `DATABASE_URL` and `JWT_SECRET` are set in the hosting platform.
 
 ## 🤖 AI Usage Notes
