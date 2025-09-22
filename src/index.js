@@ -2,16 +2,11 @@ import express from "express";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
-import authRoutes from "./routes/authRoutes.js";
-import bugRoutes from "./routes/bugRoutes.js";
+import authRoutes from "./routes/auth.js";
+import bugRoutes from "./routes/bugs.js";
 
 dotenv.config();
 const app = express();
-
-// ✅ Log environment variables for debugging
-console.log("DATABASE_URL is set:", !!process.env.DATABASE_URL);
-console.log("JWT_SECRET is set:", !!process.env.JWT_SECRET);
-console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
 
 
 // ✅ Rate limiting
