@@ -22,7 +22,7 @@ app.use(limiter);
 // ✅ CORS configuration
 const allowedOrigins = [
   process.env.FRONTEND_URL,
-  "https://bug-tracker-app-frontend-m44azk76b-komalgaur992s-projects.vercel.app", // Vercel frontend
+  "https://bug-tracker-app-frontend-fg4mzheln-komalgaur992s-projects.vercel.app", // Vercel frontend
   "http://localhost:5173" // local dev
 ].filter(Boolean);
 
