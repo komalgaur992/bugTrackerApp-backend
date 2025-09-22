@@ -8,6 +8,12 @@ import bugRoutes from "./routes/bugRoutes.js";
 dotenv.config();
 const app = express();
 
+// ✅ Log environment variables for debugging
+console.log("DATABASE_URL is set:", !!process.env.DATABASE_URL);
+console.log("JWT_SECRET is set:", !!process.env.JWT_SECRET);
+console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
+
+
 // ✅ Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
