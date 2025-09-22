@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "build": "echo \"No build step required for the Node.js server\"",
+    "build": "prisma generate",
       "postinstall": "prisma generate || npx prisma generate",
       "seed": "node src/seed.js"
     },
